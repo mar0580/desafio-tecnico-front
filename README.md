@@ -1,27 +1,23 @@
-# BoletimEscolar
+# Boletim Escolar
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+Este projeto foi gerado com o Angular CLI na versão 16.2.16.
 
-## Development server
+## Servidor de desenvolvimento
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Execute ng serve para iniciar um servidor de desenvolvimento. Acesse http://localhost:4200/. A aplicação será recarregada automaticamente sempre que você alterar qualquer arquivo fonte.
 
-## Code scaffolding
+## Geração de código (scaffolding)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Execute ng generate component component-name para gerar um novo componente. Você também pode usar ng generate directive|pipe|service|class|guard|interface|enum|module.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Execute ng build para compilar o projeto. Os artefatos de build serão armazenados no diretório dist/.
 
-## Running unit tests
+## Executando testesRunning unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Execute ng test para rodar os testes unitários
 
-## Running end-to-end tests
+## Executando testes end-to-end
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Execute ng e2e para rodar os testes end-to-end usando a plataforma de sua escolha. Para usar esse comando, você precisa primeiro adicionar um pacote que implemente funcionalidades de testes end-to-end.
