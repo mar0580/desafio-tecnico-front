@@ -1,27 +1,75 @@
-# BoletimEscolar
+# Boletim Escolar (Front-end)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+Aplicação Angular para lançamento de notas do boletim escolar. Consumindo a API do back-end e exibindo os lançamentos por turma e disciplina.
 
-## Development server
+## Stack
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular 16
+- Angular Material
+- RxJS
 
-## Code scaffolding
+## Arquitetura e organização
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- `src/app/services`: serviços de comunicação e regras de negócio.
+- `src/app/models`: contratos (DTOs) usados no front-end.
+- `src/app/shared`: módulos compartilhados (Material).
+
+Responsabilidades principais:
+
+- `BoletimApiService`: comunicação HTTP com o back-end.
+- `BoletimRegrasService`: regras de negócio (ex.: média ponderada e filtro de avaliações).
+- `UiFeedbackService`: feedback consistente ao usuário (snackbars).
+
+## Regras de negócio implementadas
+
+- Cálculo de média ponderada por aluno.
+
+## Tratamento de erros
+
+Mensagens de erro e sucesso são apresentadas de forma consistente pelo `UiFeedbackService`.
+
+## Como executar
+
+### Pré-requisitos
+
+- Node.js 18+
+- Angular CLI 16+
+- Back-end em execução em `http://localhost:8080`
+
+### Instalação e execução
+
+1. Instale as dependências:
+	- `npm install`
+2. Inicie a aplicação:
+	- `npm start`
+3. Acesse `http://localhost:4200/`.
+
+### Seed (dados iniciais)
+
+O front-end consome os dados já semeados pelo back-end. Certifique-se de subir o back-end com as informações iniciais (turmas, disciplinas, alunos e avaliações) antes de usar a tela de lançamento.
+
+## Testes unitários
+
+Há testes simples para regras de negócio (ex.: média ponderada) no serviço de regras.
+
+Execute:
+
+- `npm test`
+
+## Integração com o back-end
+
+Endpoints utilizados:
+
+- `GET /api/turmas`
+- `GET /api/disciplinas/turma/{turmaId}`
+- `GET /api/notas/lancamento?turmaId=&disciplinaId=`
+- `POST /api/notas/lancamento`
+
+## Nota sobre autenticação/controle de acesso (front-end)
+
+Em um cenário real, o front-end integraria com um provedor de identidade (ex.: OAuth2/OIDC) para obter um token de acesso. Esse token seria armazenado de forma segura (ex.: memory storage) e enviado em todas as requisições através de um `HttpInterceptor`. Também seriam aplicados `RouteGuards` para proteger rotas e diretivas para controle de permissões por perfil.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- `ng build`
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
