@@ -73,7 +73,6 @@ Em um cenário real, o front-end integraria com um provedor de identidade (ex.: 
 
 - `ng build`
 
-=======
 # Boletim Escolar
 
 Este projeto foi gerado com o Angular CLI na versão 16.2.16.
